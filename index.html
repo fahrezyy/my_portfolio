@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nabiel Fahrezi Raihan - Portofolio</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        electric: {
+                            DEFAULT: '#0052FF',
+                            dark: '#003ecc',
+                            glow: '#3b82f6',
+                        },
+                        lightbg: {
+                            DEFAULT: '#FFFFFF',
+                            card: '#F8FAFC',
+                            border: '#E2E8F0'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Library CSS for Scroll Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Link ke file CSS eksternal -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-lightbg text-slate-800 antialiased selection:bg-electric selection:text-white">
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-xl border-b border-lightbg-border z-50 transition-all">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#hero" class="nav-link text-2xl font-extrabold tracking-tight text-slate-900">
+                fahrezirayhan<span class="text-electric">.</span>
+            </a>
+            <nav class="hidden md:flex items-center space-x-8 font-medium text-sm text-slate-600">
+                <a href="#about" class="nav-link hover:text-electric transition-colors">Tentang Saya</a>
+                <a href="#experience" class="nav-link hover:text-electric transition-colors">Pengalaman</a>
+                <a href="#projects" class="nav-link hover:text-electric transition-colors">Proyek</a>
+                <a href="#skills" class="nav-link hover:text-electric transition-colors">Keahlian</a>
+                <a href="#contact" class="nav-link px-5 py-2.5 rounded-full bg-electric text-white hover:bg-electric-dark transition-all shadow-lg shadow-electric/20">Hubungi Saya</a>
+            </nav>
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-slate-900 text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-lightbg-border px-6 py-5 space-y-3 shadow-xl">
+            <a href="#about" class="nav-link block font-medium text-slate-700 hover:text-electric py-1">Tentang Saya</a>
+            <a href="#experience" class="nav-link block font-medium text-slate-700 hover:text-electric py-1">Pengalaman</a>
+            <a href="#projects" class="nav-link block font-medium text-slate-700 hover:text-electric py-1">Proyek</a>
+            <a href="#skills" class="nav-link block font-medium text-slate-700 hover:text-electric py-1">Keahlian</a>
+            <a href="#contact" class="nav-link block text-center font-medium py-3 rounded-xl bg-electric text-white shadow-md shadow-electric/20">Hubungi Saya</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center pt-28 pb-16 px-6 overflow-hidden bg-white">
+        <div class="absolute top-1/3 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-electric/5 blur-[150px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-6xl mx-auto flex flex-col-reverse lg:flex-row items-center justify-between gap-12 relative z-10 w-full">
+            
+            <!-- Informasi Teks Hero (Kiri) -->
+            <div class="text-center lg:text-left max-w-xl" data-aos="fade-right" data-aos-duration="1000">
+                <div class="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-electric/10 text-electric font-semibold text-xs mb-6 tracking-wide uppercase border border-electric/20">
+                    <span class="w-2 h-2 rounded-full bg-electric animate-pulse"></span>
+                    Informatics Engineering Graduate
+                </div>
+                
+                <h1 class="text-4xl sm:text-6xl font-extrabold text-slate-900 tracking-tight mb-6 leading-tight">
+                    Halo, Saya <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-electric to-blue-600">Nabiel Fahrezi Raihan</span>
+                </h1>
+                
+                <p class="text-slate-600 text-base sm:text-lg mb-8 leading-relaxed">
+                    "Portofolio ini menampilkan proyek dan keahlian saya sebagai lulusan Teknik Informatika."
+                </p>
+                
+                <!-- Tombol CTA -->
+                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-10">
+                    <a href="#experience" class="nav-link w-full sm:w-auto px-8 py-4 rounded-xl bg-electric text-white font-semibold hover:bg-electric-dark shadow-lg shadow-electric/25 transition-all text-center">
+                        Lihat Pengalaman
+                    </a>
+                    <a href="#contact" class="nav-link w-full sm:w-auto px-8 py-4 rounded-xl border border-slate-300 text-slate-700 font-semibold hover:border-electric hover:text-electric transition-all text-center">
+                        Hubungi Saya
+                    </a>
+                </div>
+
+                <!-- Badges Teknologi / Tools Singkat -->
+                <div class="pt-6 border-t border-slate-100 flex items-center justify-center lg:justify-start gap-3">
+                    <span class="text-xs text-slate-400 font-medium mr-2">Tech Stack:</span>
+                    <span class="w-9 h-9 rounded-lg bg-slate-50 border border-slate-200 flex items-center justify-center text-electric text-sm shadow-sm" title="Laravel">
+                        <i class="fa-brands fa-laravel"></i>
+                    </span>
+                    <span class="w-9 h-9 rounded-lg bg-slate-50 border border-slate-200 flex items-center justify-center text-electric text-sm shadow-sm" title="PHP">
+                        <i class="fa-brands fa-php"></i>
+                    </span>
+                    <span class="w-9 h-9 rounded-lg bg-slate-50 border border-slate-200 flex items-center justify-center text-electric text-sm shadow-sm" title="Python">
+                        <i class="fa-brands fa-python"></i>
+                    </span>
+                    <span class="w-9 h-9 rounded-lg bg-slate-50 border border-slate-200 flex items-center justify-center text-electric text-sm shadow-sm" title="Database SQL">
+                        <i class="fa-solid fa-database"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Foto & Shape Vektor Bunga (Kanan - Warna Asli / Full Color) -->
+            <div class="relative flex items-center justify-center w-full lg:w-1/2 max-w-md lg:max-w-none" data-aos="fade-left" data-aos-duration="1000">
+                <div class="absolute w-[280px] h-[280px] sm:w-[380px] sm:h-[380px] text-electric fill-current opacity-20 -z-10 animate-pulse duration-1000">
+                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M100 20 C108 55, 145 55, 165 35 C145 75, 175 95, 180 100 C175 105, 145 125, 165 165 C145 145, 108 145, 100 180 C92 145, 55 145, 35 165 C55 125, 25 105, 20 100 C25 95, 55 75, 35 35 C55 55, 92 55, 100 20 Z" />
+                    </svg>
+                </div>
+
+                <div class="relative z-10 w-64 sm:w-80 lg:w-[360px] cursor-pointer group" onclick="openModal('images/foto-profil.png', 'Nabiel Fahrezi Raihan')">
+                    <img src="images/foto-profil.png" alt="Nabiel Fahrezi Raihan" class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105 drop-shadow-[0_20px_30px_rgba(0,82,255,0.15)]">
+                    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-slate-900/80 border border-slate-700 text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm shadow-md whitespace-nowrap">
+                        <i class="fa-solid fa-expand mr-1 text-electric"></i> Perbesar Foto
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- About Me Section (Tanpa Foto & Layout Terpusat) -->
+    <section id="about" class="py-24 px-6 bg-slate-50 relative border-t border-b border-lightbg-border">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-extrabold text-slate-900 mb-3">Tentang Saya</h2>
+                <div class="w-12 h-1.5 bg-electric mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="space-y-8" data-aos="fade-up" data-aos-duration="800">
+                <div class="space-y-4 text-slate-600 leading-relaxed text-justify sm:text-center bg-white p-8 sm:p-10 rounded-3xl border border-lightbg-border shadow-sm">
+                    <p>
+                        Lulusan Teknik Informatika dari Universitas Islam Sultan Agung (UNISSULA) Semarang dengan IPK <strong class="text-slate-900">3.69/4.00</strong>. Saya memiliki semangat tinggi untuk terus belajar, disiplin, serta mampu bekerja secara mandiri maupun dalam tim.
+                        Memiliki pengalaman luas dalam pengembangan proyek digital, administrasi perkantoran, dukungan IT, serta aktif dalam organisasi kemahasiswaan, termasuk pernah menjabat sebagai Ketua Divisi Pengawasan dan Evaluasi HM TIF Unissula.
+                    </p>
+                </div>
+                
+                <div class="grid sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
+                    <div class="flex items-center gap-3 p-4 rounded-2xl bg-white border border-lightbg-border shadow-sm">
+                        <div class="w-10 h-10 rounded-xl bg-electric/10 text-electric flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div class="text-sm overflow-hidden">
+                            <p class="text-xs text-slate-400 font-medium">Telepon</p>
+                            <p class="font-bold text-slate-800">085701605376</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 p-4 rounded-2xl bg-white border border-lightbg-border shadow-sm">
+                        <div class="w-10 h-10 rounded-xl bg-electric/10 text-electric flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div class="text-sm overflow-hidden">
+                            <p class="text-xs text-slate-400 font-medium">Email</p>
+                            <p class="font-bold text-slate-800 truncate">fahrezirayhan4@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-24 px-6 bg-white relative overflow-hidden">
+        <div class="absolute -top-40 -left-40 w-96 h-96 bg-electric/5 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-6xl mx-auto relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-xs font-bold uppercase tracking-widest text-electric bg-electric/10 px-4 py-1.5 rounded-full border border-electric/20">
+                    Carrier Journey
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 mb-3">Pengalaman</h2>
+                <div class="w-16 h-1.5 bg-electric mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <!-- Card 1: DPRD Grobogan -->
+                <div class="bg-slate-50 p-8 rounded-3xl border border-lightbg-border shadow-sm hover-card-effect hover:shadow-xl hover:shadow-electric/10 hover:border-electric transition-all duration-300 flex flex-col justify-between group relative overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-electric to-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-bold px-3.5 py-1.5 bg-electric/10 text-electric rounded-full inline-flex items-center gap-1.5">
+                                <i class="fa-regular fa-calendar-alt text-xs"></i> Feb 2025 - Mar 2025
+                            </span>
+                            <div class="w-10 h-10 rounded-xl bg-white text-slate-600 group-hover:bg-electric group-hover:text-white transition-colors flex items-center justify-center shrink-0 border border-slate-200 shadow-sm">
+                                <i class="fa-solid fa-building-user text-sm"></i>
+                            </div>
+                        </div>
+
+                        <h3 class="text-xl font-bold text-slate-900 group-hover:text-electric transition-colors">Divisi Humas</h3>
+                        <p class="text-sm font-semibold text-slate-500 mb-5 flex items-center gap-1.5">
+                            <i class="fa-solid fa-location-dot text-xs text-electric"></i> DPRD Grobogan
+                        </p>
+
+                        <ul class="space-y-3 text-slate-600 text-sm mb-6">
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-circle-check text-electric text-xs mt-1 shrink-0"></i>
+                                <span>Membantu pengelolaan, digitalisasi, dan penataan dokumen internal serta arsip kantor.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-circle-check text-electric text-xs mt-1 shrink-0"></i>
+                                <span>Mengelola kebutuhan penyuntingan media dan konten teknis operasional kantor.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-circle-check text-electric text-xs mt-1 shrink-0"></i>
+                                <span>Memberikan dukungan TI dasar harian untuk memastikan kelancaran perangkat kerja staf.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="pt-4 border-t border-lightbg-border flex flex-wrap gap-1.5">
+                        <span class="text-[11px] font-semibold px-2.5 py-1 bg-white text-slate-600 rounded-md border border-slate-200">IT Support</span>
+                        <span class="text-[11px] font-semibold px-2.5 py-1 bg-white text-slate-600 rounded-md border border-slate-200">Arsip Digital</span>
+                        <span class="text-[11px] font-semibold px-2.5 py-1 bg-white text-slate-600 rounded-md border border-slate-200">Media Editing</span>
+                    </div>
+                </div>
+
+                <!-- Card 2: POLDA JATENG -->
+                <div class="bg-slate-50 p-8 rounded-3xl border border-lightbg-border shadow-sm hover-card-effect hover:shadow-xl hover:shadow-electric/10 hover:border-electric transition-all duration-300 flex flex-col justify-between group relative overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-electric to-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-bold px-3.5 py-1.5 bg-electric/10 text-electric rounded-full inline-flex items-center gap-1.5">
+                                <i class="fa-regular fa-calendar-alt text-xs"></i> Apr 2025 - Jul 2025
+                            </span>
+                            <div class="w-10 h-10 rounded-xl bg-white text-slate-600 group-hover:bg-electric group-hover:text-white transition-colors flex items-center justify-center shrink-0 border border-slate-200 shadow-sm">
+                                <i class="fa-solid fa-laptop-code text-sm"></i>
+                            </div>
+                        </div>
+
+                        <h3 class="text-xl font-bold text-slate-900 group-hover:text-electric transition-colors">BID TIK</h3>
+                        <p class="text-sm font-semibold text-slate-500 mb-5 flex items-center gap-1.5">
+                            <i class="fa-solid fa-location-dot text-xs text-electric"></i> POLDA Jateng, Semarang
+                        </p>
+
+                        <ul class="space-y-3 text-slate-600 text-sm mb-6">
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-circle-check text-electric text-xs mt-1 shrink-0"></i>
+                                <span>Merancang dan mengembangkan situs web bersama tim menggunakan framework <strong class="text-slate-900">Laravel</strong>.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-circle-check text-electric text-xs mt-1 shrink-0"></i>
+                                <span>Meningkatkan efisiensi operasional dan sistem informasi internal di lingkungan BID TIK Polda Jateng.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="pt-4 border-t border-lightbg-border flex flex-wrap gap-1.5">
+                        <span class="text-[11px] font-semibold px-2.5 py-1 bg-blue-50 text-electric rounded-full font-bold">Laravel</span>
+                        <span class="text-[11px] font-semibold px-2.5 py-1 bg-white text-slate-600 rounded-md border border-slate-200">PHP</span>
+                        <span class="text-[11px] font-semibold px-2.5 py-1 bg-white text-slate-600 rounded-md border border-slate-200">Web Dev</span>
+                    </div>
+                </div>
+
+                <!-- Card 3: HM TIF UNISSULA -->
+                <div class="bg-slate-50 p-8 rounded-3xl border border-lightbg-border shadow-sm hover-card-effect hover:shadow-xl hover:shadow-electric/10 hover:border-electric transition-all duration-300 flex flex-col justify-between group relative overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-electric to-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-bold px-3.5 py-1.5 bg-electric/10 text-electric rounded-full inline-flex items-center gap-1.5">
+                                <i class="fa-regular fa-calendar-alt text-xs"></i> Jan 2024 - Jan 2025
+                            </span>
+                            <div class="w-10 h-10 rounded-xl bg-white text-slate-600 group-hover:bg-electric group-hover:text-white transition-colors flex items-center justify-center shrink-0 border border-slate-200 shadow-sm">
+                                <i class="fa-solid fa-users-gear text-sm"></i>
+                            </div>
+                        </div>
+
+                        <h3 class="text-xl font-bold text-slate-900 group-hover:text-electric transition-colors">Ketua Divisi Pengawasan & Evaluasi</h3>
+                        <p class="text-sm font-semibold text-slate-500 mb-5 flex items-center gap-1.5">
+                            <i class="fa-solid fa-graduation-cap text-xs text-electric"></i> HM TIF UNISSULA
+                        </p>
+
+                        <ul class="space-y-3 text-slate-600 text-sm mb-6">
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-circle-check text-electric text-xs mt-1 shrink-0"></i>
+                                <span>Mengoordinasikan dan mengevaluasi seluruh program kerja bidang akademik dan pengembangan mahasiswa.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-circle-check text-electric text-xs mt-1 shrink-0"></i>
+                                <span>Mengembangkan indikator kinerja serta evaluasi efektivitas program kerja keorganisasian.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="pt-4 border-t border-lightbg-border flex flex-wrap gap-1.5">
+                        <span class="text-[11px] font-semibold px-2.5 py-1 bg-white text-slate-600 rounded-md border border-slate-200">Leadership</span>
+                        <span class="text-[11px] font-semibold px-2.5 py-1 bg-white text-slate-600 rounded-md border border-slate-200">Evaluation</span>
+                        <span class="text-[11px] font-semibold px-2.5 py-1 bg-white text-slate-600 rounded-md border border-slate-200">Management</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Projects Section (Format Gambar) -->
+    <section id="projects" class="py-24 px-6 bg-slate-50 border-t border-lightbg-border relative overflow-hidden">
+        <div class="max-w-6xl mx-auto relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-xs font-bold uppercase tracking-widest text-electric bg-electric/10 px-4 py-1.5 rounded-full border border-electric/20">
+                    Visual Showcase
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 mb-3">Hasil Proyek</h2>
+                <div class="w-16 h-1.5 bg-electric mx-auto rounded-full"></div>
+                <p class="text-slate-500 text-sm mt-4">Klik pada gambar untuk memperbesar tampilan hasil proyek.</p>
+            </div>
+
+            <!-- Grid Gambar Proyek (3 Kolom) -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- Item Proyek 1 (Single Gambar) -->
+                <div class="group relative rounded-2xl overflow-hidden bg-white border border-lightbg-border shadow-sm hover:shadow-xl hover:border-electric transition-all duration-300 cursor-pointer" 
+                     data-aos="fade-up" data-aos-delay="100" 
+                     onclick="openModal('images/proyek-1.png', 'Tampilan Sistem Informasi Web BID TIK')">
+                    <div class="aspect-video w-full overflow-hidden bg-slate-100">
+                        <img src="images/proyek-1.png" alt="Proyek 1" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" onerror="this.src='https://placehold.co/600x400/0052FF/ffffff?text=Proyek+1'">
+                    </div>
+                    <div class="absolute inset-0 bg-slate-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center p-4 text-center">
+                        <span class="w-12 h-12 rounded-full bg-electric text-white flex items-center justify-center text-lg mb-2 shadow-lg group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        </span>
+                        <h4 class="text-white font-bold text-sm">Sistem Informasi Web</h4>
+                        <span class="text-slate-300 text-xs">BID TIK POLDA Jateng</span>
+                    </div>
+                </div>
+
+                <!-- Item Proyek 2 (Single Gambar) -->
+                <div class="group relative rounded-2xl overflow-hidden bg-white border border-lightbg-border shadow-sm hover:shadow-xl hover:border-electric transition-all duration-300 cursor-pointer" 
+                     data-aos="fade-up" data-aos-delay="200" 
+                     onclick="openModal('images/proyek-2.png', 'Aplikasi Deteksi Makanan menggunakan YOLO dan LLM')">
+                    <div class="aspect-video w-full overflow-hidden bg-slate-100">
+                        <img src="images/proyek-2.png" alt="Proyek 2" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" onerror="this.src='https://placehold.co/600x400/0052FF/ffffff?text=Proyek+2'">
+                    </div>
+                    <div class="absolute inset-0 bg-slate-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center p-4 text-center">
+                        <span class="w-12 h-12 rounded-full bg-electric text-white flex items-center justify-center text-lg mb-2 shadow-lg group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        </span>
+                        <h4 class="text-white font-bold text-sm">Application Project</h4>
+                        <span class="text-slate-300 text-xs">Aplikasi Deteksi Makanan</span>
+                    </div>
+                </div>
+
+                <!-- Item Proyek 3 (Multi-Gambar / Galeri Album Desain) -->
+                <div class="group relative rounded-2xl overflow-hidden bg-white border border-lightbg-border shadow-sm hover:shadow-xl hover:border-electric transition-all duration-300 cursor-pointer" 
+                     data-aos="fade-up" data-aos-delay="300" 
+                     onclick="openGalleryModal('Desain & Visual Project', ['images/proyek-3-1.png', 'images/proyek-3-2.png', 'images/proyek-3-3.png', 'images/proyek-3-4.png'])">
+                    
+                    <div class="aspect-video w-full overflow-hidden bg-slate-100 relative">
+                        <img src="images/proyek-3-1.png" alt="Proyek Desain" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" onerror="this.src='https://placehold.co/600x400/0052FF/ffffff?text=Desain+Proyek+1'">
+                        <div class="absolute top-3 right-3 bg-slate-900/70 text-white text-[11px] font-semibold px-2.5 py-1 rounded-full backdrop-blur-sm border border-white/20 flex items-center gap-1.5 z-10">
+                            <i class="fa-solid fa-images text-electric"></i> Album Desain
+                        </div>
+                    </div>
+                    
+                    <div class="absolute inset-0 bg-slate-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center p-4 text-center">
+                        <span class="w-12 h-12 rounded-full bg-electric text-white flex items-center justify-center text-lg mb-2 shadow-lg group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-images"></i>
+                        </span>
+                        <h4 class="text-white font-bold text-sm">Desain & Visual Project</h4>
+                        <span class="text-slate-300 text-xs">Klik untuk melihat semua gambar</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- My Skills Section -->
+    <section id="skills" class="py-24 px-6 bg-white border-t border-lightbg-border">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-xs font-bold uppercase tracking-widest text-electric bg-electric/10 px-4 py-1.5 rounded-full border border-electric/20">
+                    Abilities & Tools
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 mb-3">Keahlian & Kemampuan</h2>
+                <div class="w-16 h-1.5 bg-electric mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+
+                <!-- Kategori 1 -->
+                <div class="bg-slate-50 p-8 rounded-3xl border border-lightbg-border hover-card-effect hover:border-electric hover:shadow-xl hover:shadow-electric/10 transition-all duration-300 group shadow-sm" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-12 h-12 rounded-2xl bg-electric/10 text-electric flex items-center justify-center text-xl group-hover:bg-electric group-hover:text-white transition-colors border border-electric/20">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg text-slate-900">Programming & Data</h3>
+                            <p class="text-xs text-slate-400 font-medium">Bahasa Pemrograman & Basis Data</p>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2.5">
+                        <div class="flex items-center gap-2 px-4 py-2 bg-white rounded-xl border border-slate-200 text-slate-700 font-semibold text-xs shadow-sm hover:border-electric hover:text-electric transition-colors">
+                            <i class="fa-solid fa-terminal text-electric"></i> C++
+                        </div>
+                        <div class="flex items-center gap-2 px-4 py-2 bg-white rounded-xl border border-slate-200 text-slate-700 font-semibold text-xs shadow-sm hover:border-electric hover:text-electric transition-colors">
+                            <i class="fa-brands fa-php text-electric text-sm"></i> PHP
+                        </div>
+                        <div class="flex items-center gap-2 px-4 py-2 bg-white rounded-xl border border-slate-200 text-slate-700 font-semibold text-xs shadow-sm hover:border-electric hover:text-electric transition-colors">
+                            <i class="fa-brands fa-python text-electric text-sm"></i> Python
+                        </div>
+                        <div class="flex items-center gap-2 px-4 py-2 bg-white rounded-xl border border-slate-200 text-slate-700 font-semibold text-xs shadow-sm hover:border-electric hover:text-electric transition-colors">
+                            <i class="fa-solid fa-database text-electric"></i> SQL
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kategori 2 -->
+                <div class="bg-slate-50 p-8 rounded-3xl border border-lightbg-border hover-card-effect hover:border-electric hover:shadow-xl hover:shadow-electric/10 transition-all duration-300 group shadow-sm" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-12 h-12 rounded-2xl bg-electric/10 text-electric flex items-center justify-center text-xl group-hover:bg-electric group-hover:text-white transition-colors border border-electric/20">
+                            <i class="fa-solid fa-file-lines"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg text-slate-900">Software & Tools</h3>
+                            <p class="text-xs text-slate-400 font-medium">Administrasi & Manajemen Dokumen</p>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2.5">
+                        <div class="flex items-center gap-2 px-4 py-2 bg-white rounded-xl border border-slate-200 text-slate-700 font-semibold text-xs shadow-sm hover:border-electric hover:text-electric transition-colors">
+                            <i class="fa-regular fa-file-excel text-emerald-600"></i> Ms. Excell
+                        </div>
+                        <div class="flex items-center gap-2 px-4 py-2 bg-white rounded-xl border border-slate-200 text-slate-700 font-semibold text-xs shadow-sm hover:border-electric hover:text-electric transition-colors">
+                            <i class="fa-regular fa-file-word text-blue-600"></i> Ms. Word
+                        </div>
+                        <div class="flex items-center gap-2 px-4 py-2 bg-white rounded-xl border border-slate-200 text-slate-700 font-semibold text-xs shadow-sm hover:border-electric hover:text-electric transition-colors">
+                            <i class="fa-regular fa-file-powerpoint text-amber-600"></i> Ms. PowerPoint
+                        </div>
+                        <div class="flex items-center gap-2 px-4 py-2 bg-white rounded-xl border border-slate-200 text-slate-700 font-semibold text-xs shadow-sm hover:border-electric hover:text-electric transition-colors">
+                            <i class="fa-solid fa-folder-open text-electric"></i> Document Management
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kategori 3 -->
+                <div class="bg-slate-50 p-8 rounded-3xl border border-lightbg-border hover-card-effect hover:border-electric hover:shadow-xl hover:shadow-electric/10 transition-all duration-300 group shadow-sm" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-12 h-12 rounded-2xl bg-electric/10 text-electric flex items-center justify-center text-xl group-hover:bg-electric group-hover:text-white transition-colors border border-electric/20">
+                            <i class="fa-solid fa-user-gear"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg text-slate-900">IT & Personal Skills</h3>
+                            <p class="text-xs text-slate-400 font-medium">Dukungan Teknis & Soft Skills</p>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2.5">
+                        <div class="flex items-center gap-2 px-4 py-2 bg-white rounded-xl border border-slate-200 text-slate-700 font-semibold text-xs shadow-sm hover:border-electric hover:text-electric transition-colors">
+                            <i class="fa-solid fa-headset text-electric"></i> IT Support & Maintenance
+                        </div>
+                        <div class="flex items-center gap-2 px-4 py-2 bg-white rounded-xl border border-slate-200 text-slate-700 font-semibold text-xs shadow-sm hover:border-electric hover:text-electric transition-colors">
+                            <i class="fa-solid fa-comments text-electric"></i> Excellent Communication Skills
+                        </div>
+                        <div class="flex items-center gap-2 px-4 py-2 bg-white rounded-xl border border-slate-200 text-slate-700 font-semibold text-xs shadow-sm hover:border-electric hover:text-electric transition-colors">
+                            <i class="fa-solid fa-clock text-electric"></i> Effective Time Management
+                        </div>
+                        <div class="flex items-center gap-2 px-4 py-2 bg-white rounded-xl border border-slate-200 text-slate-700 font-semibold text-xs shadow-sm hover:border-electric hover:text-electric transition-colors">
+                            <i class="fa-solid fa-sliders text-electric"></i> Highly Adaptable
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 px-6 bg-slate-900 text-white relative overflow-hidden border-t border-slate-800" data-aos="fade-up">
+        <div class="absolute right-0 bottom-0 w-96 h-96 bg-electric/15 rounded-full blur-[140px] pointer-events-none"></div>
+        <div class="max-w-3xl mx-auto text-center relative z-10">
+            <h2 class="text-3xl font-extrabold mb-3 text-white">Mari Terhubung</h2>
+            <div class="w-12 h-1.5 bg-electric mx-auto rounded-full mb-6"></div>
+            <p class="text-slate-400 mb-10 max-w-xl mx-auto text-sm sm:text-base leading-relaxed">
+                Tertarik berkolaborasi atau ingin mendiskusikan peluang kerja sama? Jangan ragu untuk mengirimkan pesan melalui email atau menghubungi kontak saya.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="mailto:fahrezirayhan4@gmail.com" class="w-full sm:w-auto flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-electric text-white font-semibold hover:bg-electric-dark shadow-lg shadow-electric/30 transition-all text-sm">
+                    <i class="fa-solid fa-envelope"></i> fahrezirayhan4@gmail.com
+                </a>
+                <a href="https://linkedin.com/in/nabiel-fahrezi-rayhan-560357384" target="_blank" class="w-full sm:w-auto flex items-center justify-center gap-3 px-8 py-4 rounded-xl border border-slate-700 text-slate-300 font-semibold hover:bg-white/5 hover:border-slate-500 transition-all text-sm">
+                    <i class="fa-brands fa-linkedin text-lg text-electric"></i> LinkedIn Profile
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-6 bg-slate-950 text-center text-slate-500 text-xs border-t border-slate-900">
+        <p>&copy; 2026 Nabiel Fahrezi Raihan. Hak Cipta Dilindungi.</p>
+    </footer>
+
+    <!-- MODAL POP-UP UNTUK FOTO & GALERI PROYEK -->
+    <div id="image-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4" onclick="closeModal()">
+        <div class="relative max-w-3xl w-full bg-white border border-slate-200 rounded-3xl p-5 shadow-2xl" onclick="event.stopPropagation()">
+            <!-- Tombol Close -->
+            <button onclick="closeModal()" class="absolute -top-4 -right-4 w-10 h-10 rounded-full bg-electric text-white font-bold flex items-center justify-center shadow-lg hover:bg-electric-dark transition-colors z-20">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <!-- Display Gambar Utama -->
+            <div class="overflow-hidden rounded-2xl border border-slate-200 max-h-[65vh] flex items-center justify-center bg-slate-50 relative">
+                <img id="modal-img" src="" alt="Zoomed View" class="max-w-full max-h-[60vh] object-contain transition-all duration-300">
+            </div>
+
+            <!-- Judul & Baris Thumbnail Multi-Gambar -->
+            <div class="mt-4">
+                <div class="text-center mb-3">
+                    <h4 id="modal-title" class="font-bold text-slate-900 text-lg"></h4>
+                    <p class="text-xs text-slate-500">Nabiel Fahrezi Raihan - Portofolio Resmi</p>
+                </div>
+                
+                <!-- Container Thumbnail (Multi-Gambar) -->
+                <div id="gallery-thumbnails" class="flex justify-center items-center gap-3 pt-2 border-t border-slate-100 hidden">
+                    <!-- Ditambahkan secara otomatis via JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript untuk Smooth Scrolling, Mobile Menu, AOS Animation, & Multi-Image Gallery Modal -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Inisialisasi AOS Scroll Animation
+        AOS.init({
+            once: true,
+            offset: 100,
+            duration: 800
+        });
+
+        // Toggle Mobile Menu
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth Scrolling Script untuk Navigasi Navbar
+        document.querySelectorAll('a.nav-link').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                
+                if (targetId && targetId.startsWith('#')) {
+                    e.preventDefault();
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        mobileMenu.classList.add('hidden');
+
+                        const headerHeight = 80;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Fungsi Membuka Pop-up Foto Tunggal
+        function openModal(imgSrc, titleText) {
+            const modal = document.getElementById('image-modal');
+            const modalImg = document.getElementById('modal-img');
+            const modalTitle = document.getElementById('modal-title');
+            const thumbnailsContainer = document.getElementById('gallery-thumbnails');
+
+            modalImg.src = imgSrc;
+            modalTitle.innerText = titleText;
+            thumbnailsContainer.classList.add('hidden');
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Fungsi Membuka Pop-up Galeri Multi-Gambar (Album)
+        function openGalleryModal(titleText, imageArray) {
+            const modal = document.getElementById('image-modal');
+            const modalImg = document.getElementById('modal-img');
+            const modalTitle = document.getElementById('modal-title');
+            const thumbnailsContainer = document.getElementById('gallery-thumbnails');
+
+            modalImg.src = imageArray[0];
+            modalTitle.innerText = titleText;
+
+            // Generate thumbnail
+            thumbnailsContainer.innerHTML = '';
+            imageArray.forEach((imgSrc, index) => {
+                const thumb = document.createElement('img');
+                thumb.src = imgSrc;
+                thumb.onerror = function() {
+                    this.src = `https://placehold.co/100x100/0052FF/ffffff?text=Img+${index+1}`;
+                };
+                thumb.className = `w-14 h-14 object-cover rounded-xl border-2 cursor-pointer transition-all ${index === 0 ? 'border-electric scale-105' : 'border-slate-200 opacity-60 hover:opacity-100'}`;
+                
+                thumb.onclick = function() {
+                    modalImg.src = imgSrc;
+                    document.querySelectorAll('#gallery-thumbnails img').forEach(t => {
+                        t.classList.remove('border-electric', 'scale-105');
+                        t.classList.add('border-slate-200', 'opacity-60');
+                    });
+                    this.classList.add('border-electric', 'scale-105');
+                    this.classList.remove('border-slate-200', 'opacity-60');
+                };
+                
+                thumbnailsContainer.appendChild(thumb);
+            });
+
+            thumbnailsContainer.classList.remove('hidden');
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Fungsi Menutup Pop-up
+        function closeModal() {
+            const modal = document.getElementById('image-modal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    </script>
+</body>
+</html>

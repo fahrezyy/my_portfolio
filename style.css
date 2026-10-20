@@ -1,0 +1,67 @@
+/* style.css - Dark Mode & Animations untuk Portofolio */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --electric-blue: #0052FF;
+    --electric-dark: #003ecc;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* Custom Selection Color */
+::selection {
+    background-color: var(--electric-blue);
+    color: #ffffff;
+}
+
+/* Custom Scrollbar Gelap */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0A0E17;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1E293B;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--electric-blue);
+}
+
+/* Animasi Halus untuk Kartu */
+.hover-card-effect {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.hover-card-effect:hover {
+    transform: translateY(-5px);
+}
+
+/* Animasi Modal Pop-up */
+#image-modal {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+#image-modal.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#image-modal img {
+    transform: scale(0.9);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+#image-modal.active img {
+    transform: scale(1);
+}
